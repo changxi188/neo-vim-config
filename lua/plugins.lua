@@ -47,36 +47,21 @@ packer.startup({
         use({ 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } })
         -- telescope extensions
         use("LinArcX/telescope-env.nvim")
-        -- dashboard-nvim
-        -- use({'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}})
-        -- project
-        -- use("ahmedkhalf/project.nvim")
+        -- Comment
+        use("numToStr/Comment.nvim")
         -- treesitter
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-        --------------------- LSP --------------------
-        use("williamboman/nvim-lsp-installer")
-        -- Lspconfig
-        use({ "neovim/nvim-lspconfig" })
-
-        -- 补全引擎
-        use("hrsh7th/nvim-cmp")
-        -- snippet 引擎
-        use("hrsh7th/vim-vsnip")
-        -- 补全源
-        use("hrsh7th/cmp-vsnip")
-        use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
-        use("hrsh7th/cmp-buffer")   -- { name = 'buffer' },
-        use("hrsh7th/cmp-path")     -- { name = 'path' }
-        use("hrsh7th/cmp-cmdline")  -- { name = 'cmdline' }
-        -- 常见编程语言代码段
-        use("rafamadriz/friendly-snippets")
         -- indent-blankline
         use("lukas-reineke/indent-blankline.nvim")
         -- vimspector
         use("puremourning/vimspector")
 
-        -- Comment
-        use("numToStr/Comment.nvim")
+        -- dashboard-nvim
+        -- use({'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}})
+        -- project
+        -- use("ahmedkhalf/project.nvim")
+        --------------------- LSP --------------------
+
 
         if paccker_bootstrap then
             packer.sync()

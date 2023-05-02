@@ -129,41 +129,23 @@ map("n", "Z", ":foldopen<CR>", opt)
 -- nvim-tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
--- 列表快捷键
-pluginKeys.nvimTreeList = { -- 打开文件或文件夹
-    { key = "t", action = "tabnew" },
-    --[[
-  { key = { "o", "<2-LeftMouse>" }, action = "edit" },
-  { key = "<CR>", action = "system_open" },
-  -- v分屏打开文件
-  { key = "v", action = "vsplit" },
-  -- h分屏打开文件
-  { key = "h", action = "split" },
-  -- Ignore (node_modules)
-  { key = "i", action = "toggle_ignored" },
-  -- Hide (dotfiles)
-  { key = ".", action = "toggle_dotfiles" },
-  { key = "R", action = "refresh" },
-  -- 文件操作
-  { key = "a", action = "create" },
-  { key = "d", action = "remove" },
-  { key = "r", action = "rename" },
-  { key = "x", action = "cut" },
-  { key = "c", action = "copy" },
-  { key = "p", action = "paste" },
-  { key = "y", action = "copy_name" },
-  { key = "Y", action = "copy_path" },
-  { key = "gy", action = "copy_absolute_path" },
-  { key = "I", action = "toggle_file_info" },
-  -- 进入下一级
-  { key = { "]" }, action = "cd" },
-  -- 进入上一级
-  { key = { "[" }, action = "dir_up" },
-  ]] --
-}
+pluginKeys.nvimTreeList = function (bufnr)
+    local api = require('nvim-tree.api')
+
+    local function opts(desc)
+      return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    -- use all default mappings
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- override default mappings
+    vim.keymap.set('n', 't',     api.node.open.tab,                  opts('Open: New Tab'))
+    vim.keymap.set('n', 'v', api.node.open.vertical,                opts('Open: Vertical Split'))
+    vim.keymap.set('n', 's', api.node.open.horizontal,              opts('Open: Horizontal Split'))
+end
 
 -- bufferline
-
 --"moll/vim-bbye"
 -- 关闭buffer
 map("n", "<C-w>", ":Bdelete!<CR>", opt)
@@ -202,6 +184,43 @@ pluginKeys.telescopeList = {
 }
 -- 系统环境变量
 map("n", "<A-e>", ":Telescope env<CR>", opt)
+
+-- vimspector 快捷键
+pluginKeys.mapVimspector = function()
+    -- 开始
+    map("n", "<leader>dd", ":call vimspector#Launch()<CR>", opt)
+    -- 结束
+    map("n", "<Leader>de", ":call vimspector#Reset()<CR>", opt)
+    -- 继续
+    map("n", "<Leader>dc", ":call vimspector#Continue()<CR>", opt)
+    -- 设置断点
+    map("n", "<Leader>dt", ":call vimspector#ToggleBreakpoint()<CR>", opt)
+    map("n", "<Leader>dT", ":call vimspector#ClearBreakpoints()<CR>", opt)
+    --  stepOver, stepOut, stepInto
+    map("n", "<leader>dj", "<Plug>VimspectorStepOver", opt)
+    map("n", "<leader>dk", "<Plug>VimspectorStepOut", opt)
+    map("n", "<leader>dl", "<Plug>VimspectorStepInto", opt)
+end
+
+
+-- 代码注释插件
+-- see ./lua/plugin-config/comment.lua
+pluginKeys.comment = {
+    -- Normal 模式快捷键
+    toggler = {
+        line = "gcc", -- 行注释
+        block = "gbc", -- 块注释
+    },
+    -- Visual 模式
+    opleader = {
+        line = "gc",
+        bock = "gb",
+    },
+}
+
+-- ctrl + /
+map("n", "<C-/>", "gcc", opt)
+map("v", "<C-/>", "gcc", opt)
 
 -- lsp 回调函数快捷键设置
 pluginKeys.mapLSP = function(mapbuf)
@@ -254,42 +273,5 @@ pluginKeys.cmp = function(cmp)
     }
 end
 
--- vimspector 快捷键
-pluginKeys.mapVimspector = function()
-  -- 开始
-  map("n", "<leader>dd", ":call vimspector#Launch()<CR>", opt)
-  -- 结束
-  map("n", "<Leader>de", ":call vimspector#Reset()<CR>", opt)
-  -- 继续
-  map("n", "<Leader>dc", ":call vimspector#Continue()<CR>", opt)
-  -- 设置断点
-  map("n", "<Leader>dt", ":call vimspector#ToggleBreakpoint()<CR>", opt)
-  map("n", "<Leader>dT", ":call vimspector#ClearBreakpoints()<CR>", opt)
-  --  stepOver, stepOut, stepInto
-  map("n", "<leader>dj", "<Plug>VimspectorStepOver", opt)
-  map("n", "<leader>dk", "<Plug>VimspectorStepOut", opt)
-  map("n", "<leader>dl", "<Plug>VimspectorStepInto", opt)
-end
-
-
--- 代码注释插件
--- see ./lua/plugin-config/comment.lua
-pluginKeys.comment = {
-  -- Normal 模式快捷键
-  toggler = {
-    line = "gcc", -- 行注释
-    block = "gbc", -- 块注释
-  },
-  -- Visual 模式
-  opleader = {
-    line = "gc",
-    bock = "gb",
-  },
-}
-
--- ctrl + /
-map("n", "<C-/>", "gcc", opt)
-map("v", "<C-/>", "gcc", opt)
 
 return pluginKeys
-

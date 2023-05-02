@@ -70,7 +70,7 @@ vim.o.list = false
 -- 不可见字符的显示，这里只把空格显示为一个点
 vim.o.listchars = "space:·,tab:··"
 -- 补全增强
-vim.o.wildmenu = true
+vim.o.wildmenu = false
 -- Dont' pass messages to |ins-completin menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
 -- 补全最多显示10行

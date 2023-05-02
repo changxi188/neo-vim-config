@@ -4,6 +4,8 @@ require("basic")
 require("keybindings")
 -- Packer插件管理
 require("plugins")
+-- 主题设置
+require("colorscheme")
 -- 插件配置
 require("plugin-config.nvim-tree")
 require("plugin-config.bufferline")
@@ -11,15 +13,16 @@ require("plugin-config.lualine")
 require("plugin-config.telescope")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.indent-blankline")
--- 内置LSP
-require("lsp.setup")
-require("lsp.cmp")
-require("dap.vimspector")   --lua/dap/vimspector/iniit.lua
 require("plugin-config.comment")
 
+-- debugger
+require("dap.vimspector") --lua/dap/vimspector/iniit.lua
 
--- 主题设置
--- require("colorscheme")
+-- 内置LSP
+-- require("lsp.setup")
+-- require("lsp.cmp")
+
+
 -- 自动命令
 -- require("autocmds")
 -- require("plugin-config.project")
