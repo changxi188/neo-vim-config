@@ -6,6 +6,7 @@ require("keybindings")
 require("plugins")
 -- 主题设置
 require("colorscheme")
+-- require("plugin-config.vsc-dark-plus")
 -- 插件配置
 require("plugin-config.nvim-tree")
 require("plugin-config.bufferline")
@@ -15,8 +16,11 @@ require("plugin-config.nvim-treesitter")
 require("plugin-config.indent-blankline")
 require("plugin-config.comment")
 
+-- mason
+require("mason-lsp.setup")
+
 -- debugger
-require("dap.vimspector") --lua/dap/vimspector/iniit.lua
+-- require("dap.vimspector") --lua/dap/vimspector/iniit.lua
 
 -- 内置LSP
 -- require("lsp.setup")

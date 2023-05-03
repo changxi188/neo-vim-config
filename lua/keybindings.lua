@@ -43,6 +43,8 @@ map("v", "<C-k>", "5k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
 map("n", "<C-u>", "10k", opt)
 map("n", "<C-d>", "10j", opt)
+map("n", "<leader>u", "10k", opt)
+map("n", "<leader>d", "10j", opt)
 
 -- magic search
 map("n", "/", "/\\v", { noremap = true, silent = false })
@@ -150,11 +152,11 @@ end
 -- 关闭buffer
 map("n", "<C-w>", ":Bdelete!<CR>", opt)
 -- 左右buffer切换
-map("n", "<A-PageUp>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<A-PageDown>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<A-u>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<A-i>", ":BufferLineCycleNext<CR>", opt)
 -- 左右移动buffer
-map("n", "<A-S-PageUp>", ":BufferLineMovePrev<CR>", opt)
-map("n", "<A-S-PageDown>", ":BufferLineMoveNext<CR>", opt)
+map("n", "<A-S-u>", ":BufferLineMovePrev<CR>", opt)
+map("n", "<A-S-i>", ":BufferLineMoveNext<CR>", opt)
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)

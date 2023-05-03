@@ -16,13 +16,13 @@ nvim_tree.setup({
     disable_netrw = true,
     -- 不显示 git 状态图标
     git = {
-        enable = true,
+        enable = false,
     },
     -- project plugin 需要这样设置
     update_cwd = true,
     update_focused_file = {
-        enable = true,
-        update_cwd = true,
+        enable =true,
+        update_cwd = false,
     },
     filters = {
         -- 隐藏 .文件
@@ -32,7 +32,7 @@ nvim_tree.setup({
     },
     view = {
         -- 宽度
-        width = 30,
+        width = 40,
         -- 也可以 'right'
         side = "left",
         -- 隐藏根目录

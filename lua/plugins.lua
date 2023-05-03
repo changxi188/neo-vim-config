@@ -35,6 +35,8 @@ packer.startup({
     function(use)
         -- Packer 可以升级自己
         use("wbthomason/packer.nvim")
+        -- theme
+        use("Mofiqul/vscode.nvim")
         -------------------------- plugins -------------------------------------------
         -- nvim-tree
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
@@ -53,14 +55,20 @@ packer.startup({
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
         -- indent-blankline
         use("lukas-reineke/indent-blankline.nvim")
+
+        -------------------------- mason -------------------------------------------
+        use {"williamboman/mason.nvim", run = ":MasonUpdate"} -- :MasonUpdate updates registry contents
+        -- lsp 
+        use {"williamboman/mason-lspconfig.nvim"}
+        use {"neovim/nvim-lspconfig"}
+
         -- vimspector
-        use("puremourning/vimspector")
+        -- use("puremourning/vimspector")
 
         -- dashboard-nvim
         -- use({'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}})
         -- project
         -- use("ahmedkhalf/project.nvim")
-        --------------------- LSP --------------------
 
 
         if paccker_bootstrap then

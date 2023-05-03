@@ -21,6 +21,15 @@ bufferline.setup({
         text_align = "left",
       },
     },
+    buffer_close_icon = "",
+    close_icon = "",
+    indicator = {
+          style = "icon",
+          icon = " ",
+    },
+    left_trunc_marker = "",
+    modified_icon = "●",
+
     -- 使用 nvim 内置 LSP  后续课程会配置
     diagnostics = "nvim_lsp",
     -- 可选，显示 LSP 报错图标
@@ -34,4 +43,5 @@ bufferline.setup({
       return s
     end,
   },
+
 })
