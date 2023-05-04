@@ -21,7 +21,7 @@ nvim_tree.setup({
     -- project plugin 需要这样设置
     update_cwd = true,
     update_focused_file = {
-        enable =true,
+        enable = true,
         update_cwd = false,
     },
     filters = {

@@ -30,3 +30,6 @@ function  LspOnAttach(client, bufnr)
     require("keybindings").mapLSP(buf_set_keymap)
 end
 
+-- Set up lspconfig.
+LspCapabilities = require('cmp_nvim_lsp').default_capabilities()
+

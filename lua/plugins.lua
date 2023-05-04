@@ -55,12 +55,23 @@ packer.startup({
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
         -- indent-blankline
         use("lukas-reineke/indent-blankline.nvim")
+        -- auto completion
+        use("hrsh7th/nvim-cmp")
+        use("hrsh7th/vim-vsnip") -- Snippet 引擎
+        use("hrsh7th/cmp-vsnip") -- 补全源
+        use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
+        use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
+        use("hrsh7th/cmp-path") -- { name = 'path' }
+        use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+        use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
+        use("rafamadriz/friendly-snippets") -- 常见编程语言代码段
 
         -------------------------- mason -------------------------------------------
         use {"williamboman/mason.nvim", run = ":MasonUpdate"} -- :MasonUpdate updates registry contents
         -- lsp 
         use {"williamboman/mason-lspconfig.nvim"}
         use {"neovim/nvim-lspconfig"}
+
 
         -- vimspector
         -- use("puremourning/vimspector")

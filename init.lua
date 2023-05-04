@@ -15,6 +15,7 @@ require("plugin-config.telescope")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.indent-blankline")
 require("plugin-config.comment")
+require("plugin-config.nvim-cmp")
 
 -- mason
 require("mason-lsp.setup")
