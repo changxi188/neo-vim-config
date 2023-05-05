@@ -18,7 +18,8 @@ Mason.setup({
 
 -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
 MasonConfig.setup({
-    ensure_installed = {"bashls", "clangd", "cmake", "jsonls", "lua_ls", "pyright", "yamlls",},
+    -- ensure_installed = {"bashls", "clangd", "cmake", "jsonls", "lua_ls", "pyright", "yamlls",},
+    ensure_installed = {"lua_ls", "clangd"}
 })
 
 

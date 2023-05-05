@@ -19,10 +19,10 @@ nvim_tree.setup({
         enable = false,
     },
     -- project plugin 需要这样设置
-    update_cwd = true,
+    -- update_root = true,
     update_focused_file = {
         enable = true,
-        update_cwd = false,
+        update_root = false,
     },
     filters = {
         -- 隐藏 .文件

@@ -19,7 +19,10 @@ lualine.setup({
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {
-      "filename",
+      {
+        "filename",
+        path = 2,
+      },
       {
         "lsp_progress",
         spinner_symbols = { " ", " ", " ", " ", " ", " " },

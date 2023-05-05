@@ -41,8 +41,8 @@ map("n", "<C-k>", "5k", opt)
 map("v", "<C-j>", "5j", opt)
 map("v", "<C-k>", "5k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
-map("n", "<C-u>", "10k", opt)
-map("n", "<C-d>", "10j", opt)
+map("n", "<F3>", "10k", opt)
+map("n", "<F4>", "10j", opt)
 map("n", "<leader>u", "10k", opt)
 map("n", "<leader>d", "10j", opt)
 
@@ -180,8 +180,8 @@ pluginKeys.telescopeList = {
         -- 关闭窗口
         ["<C-c>"] = "close",
         -- 预览窗口上下滚动
-        ["<C-u>"] = "preview_scrolling_up",
-        ["<C-d>"] = "preview_scrolling_down",
+        ["<F3>"] = "preview_scrolling_up",
+        ["<F4>"] = "preview_scrolling_down",
     },
 }
 -- 系统环境变量
@@ -231,7 +231,7 @@ pluginKeys.mapLSP = function(mapbuf)
     -- code action
     mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
     -- go xx
-    mapbuf("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+    mapbuf("n", "<F2>", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
     mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
     mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
     mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
@@ -270,8 +270,8 @@ pluginKeys.cmp = function(cmp)
             behavior = cmp.ConfirmBehavior.Replace
         }),
         -- 如果窗口内容太多，可以滚动
-        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+        ["<F3>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<F4>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
     }
 end
 
