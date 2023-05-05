@@ -16,9 +16,13 @@ require("plugin-config.nvim-treesitter")
 require("plugin-config.indent-blankline")
 require("plugin-config.comment")
 require("plugin-config.nvim-cmp")
+-- 格式化
+-- require("plugin-config.formatter")
 
 -- mason
 require("mason-lsp.setup")
+require("plugin-config.null-ls")
+
 
 -- debugger
 -- require("dap.vimspector") --lua/dap/vimspector/iniit.lua

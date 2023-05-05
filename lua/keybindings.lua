@@ -120,6 +120,8 @@ map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
 map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
+
+
 --------------------------------------------------------------------
 -- 插件快捷键
 local pluginKeys = {}
@@ -240,7 +242,9 @@ pluginKeys.mapLSP = function(mapbuf)
     mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
     mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
     mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-    mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+    mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
+        --mapbuf("n", lsp.format, "<cmd>lua vim.lsp.buf.format({ async = true })<CR>")
+
     -- 没用到
     -- mapbuf('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opt)
     -- mapbuf("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opt)

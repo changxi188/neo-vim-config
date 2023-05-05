@@ -1,5 +1,6 @@
 -- utf8
 vim.g.encoding = "UTF-8"
+
 vim.o.fileencoding = "utf-8"
 -- jkhl 移动时光标周围保留8行
 vim.o.scrolloff = 8
@@ -85,4 +86,16 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
+
+
+--[[
+function Formatsave()
+    -- os.execute("python3 /usr/share/vim/addons/syntax/clang-format.py")
+    py3f "/usr/share/vim/addons/syntax/clang-format.py"
+end
+
+vim.cmd("autocmd BufWritePre *.h, *.cc, *.cpp  lua  Formatsave()<CR>")
+]]-- 
+-- vim.cmd("autocmd BufWritePre *.h, *.cc, *.cpp  py3f /usr/share/vim/addons/syntax/clang-format.py")
+-- vim.cmd("autocmd BufWritePre *.h, *.cc, *.cpp" )
 

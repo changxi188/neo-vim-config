@@ -72,6 +72,11 @@ packer.startup({
         use {"williamboman/mason-lspconfig.nvim"}
         use {"neovim/nvim-lspconfig"}
 
+        -- code formattion
+        use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+
+        -- use("mhartington/formatter.nvim")
+
 
         -- vimspector
         -- use("puremourning/vimspector")
