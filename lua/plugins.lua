@@ -65,6 +65,9 @@ packer.startup({
         use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
         use("hrsh7th/cmp-nvim-lsp-signature-help") -- { name = 'nvim_lsp_signature_help' }
         use("rafamadriz/friendly-snippets") -- 常见编程语言代码段
+        -- code formattion
+        use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+        -- use("mhartington/formatter.nvim")
 
         -------------------------- mason -------------------------------------------
         use {"williamboman/mason.nvim", run = ":MasonUpdate"} -- :MasonUpdate updates registry contents
@@ -72,14 +75,9 @@ packer.startup({
         use {"williamboman/mason-lspconfig.nvim"}
         use {"neovim/nvim-lspconfig"}
 
-        -- code formattion
-        use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
-
-        -- use("mhartington/formatter.nvim")
-
-
+        -------------------------- debug -------------------------------------------
         -- vimspector
-        -- use("puremourning/vimspector")
+        use("puremourning/vimspector")
 
         -- dashboard-nvim
         -- use({'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}})

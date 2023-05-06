@@ -25,7 +25,7 @@ require("plugin-config.null-ls")
 
 
 -- debugger
--- require("dap.vimspector") --lua/dap/vimspector/iniit.lua
+require("dap.vimspector") --lua/dap/vimspector/init.lua
 
 -- 内置LSP
 -- require("lsp.setup")
@@ -49,3 +49,4 @@ require("plugin-config.null-ls")
 -- -- utils
 -- -- 复制到windows剪贴板
 -- require('utils.fix-yank')
+

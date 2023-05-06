@@ -87,6 +87,13 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 
+-- vimspector窗口调整
+vim.g.vimspector_enable_winbar = 0
+vim.g.VimspectorTerminalOpened = "0"
+vim.g.vimspector_code_minwidth = 120
+vim.g.vimspector_bottombar_height = 0
+
+
 
 --[[
 function Formatsave()

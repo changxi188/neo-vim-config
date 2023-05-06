@@ -43,6 +43,8 @@ map("v", "<C-k>", "5k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
 map("n", "<F3>", "10k", opt)
 map("n", "<F4>", "10j", opt)
+map("v", "<F3>", "10k", opt)
+map("v", "<F4>", "10j", opt)
 map("n", "<leader>u", "10k", opt)
 map("n", "<leader>d", "10j", opt)
 
@@ -111,15 +113,15 @@ map("n", "s=", "<C-w>=", opt)
 map("n", "st", ":sp | terminal<CR>", opt)
 map("n", "stv", ":vsp | terminal<CR>", opt)
 -- Esc 回 Normal 模式
-map("t", "<Esc>", "<C-\\><C-n>", opt)
-map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
-map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
+--map("t", "<Esc>", "<C-\\><C-n>", opt)
+--map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
+--map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
+--map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
+--map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
+--map("t", "<leader>h", [[ <C-\><C-N><C-w>h ]], opt)
+--map("t", "<leader>j", [[ <C-\><C-N><C-w>j ]], opt)
+--map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
+--map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
 
 
 --------------------------------------------------------------------
@@ -192,18 +194,18 @@ map("n", "<A-e>", ":Telescope env<CR>", opt)
 -- vimspector 快捷键
 pluginKeys.mapVimspector = function()
     -- 开始
-    map("n", "<leader>dd", ":call vimspector#Launch()<CR>", opt)
+    map("n", "<F5>", ":call vimspector#Launch()<CR>", opt)
     -- 结束
-    map("n", "<Leader>de", ":call vimspector#Reset()<CR>", opt)
+    map("n", "<leader>kk", ":call vimspector#Reset()<CR>", opt)
     -- 继续
-    map("n", "<Leader>dc", ":call vimspector#Continue()<CR>", opt)
+    map("n", "<S-F6>", ":call vimspector#Continue()<CR>", opt)
     -- 设置断点
-    map("n", "<Leader>dt", ":call vimspector#ToggleBreakpoint()<CR>", opt)
-    map("n", "<Leader>dT", ":call vimspector#ClearBreakpoints()<CR>", opt)
+    map("n", "<F9>", ":call vimspector#ToggleBreakpoint()<CR>", opt)
+    map("n", "<S-F9>", ":call vimspector#ClearBreakpoints()<CR>", opt)
     --  stepOver, stepOut, stepInto
-    map("n", "<leader>dj", "<Plug>VimspectorStepOver", opt)
-    map("n", "<leader>dk", "<Plug>VimspectorStepOut", opt)
-    map("n", "<leader>dl", "<Plug>VimspectorStepInto", opt)
+    map("n", "<F6>", "<Plug>VimspectorStepOver", opt)
+    map("n", "<F7>", "<Plug>VimspectorStepInto", opt)
+    map("n", "<F8>", "<Plug>VimspectorStepOut", opt)
 end
 
 
