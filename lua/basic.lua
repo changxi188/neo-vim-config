@@ -89,9 +89,9 @@ vim.opt.foldlevel = 99
 
 -- vimspector窗口调整
 vim.g.vimspector_enable_winbar = 0
-vim.g.VimspectorTerminalOpened = "0"
 vim.g.vimspector_code_minwidth = 120
-vim.g.vimspector_bottombar_height = 0
+vim.g.VimspectorTerminalOpened = "5"
+vim.g.vimspector_bottombar_height = 5
 
 
 

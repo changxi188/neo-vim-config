@@ -113,7 +113,7 @@ map("n", "s=", "<C-w>=", opt)
 map("n", "st", ":sp | terminal<CR>", opt)
 map("n", "stv", ":vsp | terminal<CR>", opt)
 -- Esc 回 Normal 模式
---map("t", "<Esc>", "<C-\\><C-n>", opt)
+map("t", "<Esc>", "<C-\\><C-n>", opt)
 --map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
 --map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
 --map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
@@ -194,14 +194,14 @@ map("n", "<A-e>", ":Telescope env<CR>", opt)
 -- vimspector 快捷键
 pluginKeys.mapVimspector = function()
     -- 开始
-    map("n", "<F5>", ":call vimspector#Launch()<CR>", opt)
+    map("n", "<F12>", ":call vimspector#Launch()<CR>", opt)
     -- 结束
     map("n", "<leader>kk", ":call vimspector#Reset()<CR>", opt)
     -- 继续
-    map("n", "<S-F6>", ":call vimspector#Continue()<CR>", opt)
+    map("n", "<F5>", ":call vimspector#Continue()<CR>", opt)
     -- 设置断点
     map("n", "<F9>", ":call vimspector#ToggleBreakpoint()<CR>", opt)
-    map("n", "<S-F9>", ":call vimspector#ClearBreakpoints()<CR>", opt)
+    map("n", "mmm", ":call vimspector#ClearBreakpoints()<CR>", opt)
     --  stepOver, stepOut, stepInto
     map("n", "<F6>", "<Plug>VimspectorStepOver", opt)
     map("n", "<F7>", "<Plug>VimspectorStepInto", opt)
