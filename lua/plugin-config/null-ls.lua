@@ -23,6 +23,6 @@ null_ls.setup({
     debug = false,
     sources = sources,
     on_attach = function(_)
-        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async = true})")
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({async = false})")
     end,
 })

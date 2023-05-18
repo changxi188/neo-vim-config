@@ -5,7 +5,7 @@ require("keybindings")
 -- Packer插件管理
 require("plugins")
 -- 主题设置
-require("colorscheme")
+-- require("colorscheme")
 -- require("plugin-config.vsc-dark-plus")
 -- 插件配置
 require("plugin-config.nvim-tree")
