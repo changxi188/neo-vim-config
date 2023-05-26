@@ -27,6 +27,10 @@ require("plugin-config.null-ls")
 -- debugger
 require("dap.vimspector") --lua/dap/vimspector/init.lua
 
+-- project
+require("plugin-config.dashboard")
+require("plugin-config.project")
+
 -- 内置LSP
 -- require("lsp.setup")
 -- require("lsp.cmp")
@@ -34,8 +38,6 @@ require("dap.vimspector") --lua/dap/vimspector/init.lua
 
 -- 自动命令
 -- require("autocmds")
--- require("plugin-config.project")
--- require("plugin-config.dashboard")
 -- require("plugin-config.toggleterm")
 -- require("plugin-config.surround")
 -- require("plugin-config.nvim-autopairs")

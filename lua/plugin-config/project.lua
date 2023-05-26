@@ -17,5 +17,6 @@ if not _ then
   vim.notify("没有找到 telescope")
   return
 end
+
 pcall(telescope.load_extension, "projects")
 

@@ -46,7 +46,7 @@ packer.startup({
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
         use("arkav/lualine-lsp-progress")
         -- telescope
-        use({ 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } })
+        use({ 'nvim-telescope/telescope.nvim', tag = "0.1.0",requires = { "nvim-lua/plenary.nvim" } })
         -- telescope extensions
         use("LinArcX/telescope-env.nvim")
         -- Comment
@@ -80,10 +80,10 @@ packer.startup({
         use("puremourning/vimspector")
 
         -- dashboard-nvim
-        -- use({'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}})
-        -- project
-        -- use("ahmedkhalf/project.nvim")
+        use {'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}}
 
+        -- project manager
+        use("ahmedkhalf/project.nvim")
 
         if paccker_bootstrap then
             packer.sync()
