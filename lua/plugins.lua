@@ -83,7 +83,7 @@ packer.startup({
         use {'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}}
 
         -- project manager
-        use("ahmedkhalf/project.nvim")
+        -- use("ahmedkhalf/project.nvim")
 
         if paccker_bootstrap then
             packer.sync()

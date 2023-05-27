@@ -29,7 +29,7 @@ require("dap.vimspector") --lua/dap/vimspector/init.lua
 
 -- project
 require("plugin-config.dashboard")
-require("plugin-config.project")
+--require("plugin-config.project")
 
 -- 内置LSP
 -- require("lsp.setup")
