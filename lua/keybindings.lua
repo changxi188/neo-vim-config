@@ -123,6 +123,9 @@ map("t", "<Esc>", "<C-\\><C-n>", opt)
 --map("t", "<leader>k", [[ <C-\><C-N><C-w>k ]], opt)
 --map("t", "<leader>l", [[ <C-\><C-N><C-w>l ]], opt)
 
+-- copilot 配置
+vim.cmd('imap <silent><script><expr> <C-j> copilot#Accept("")')
+vim.cmd("let g:copilot_no_tab_map = v:true")
 
 --------------------------------------------------------------------
 -- 插件快捷键
