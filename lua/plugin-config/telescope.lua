@@ -22,5 +22,6 @@ telescope.setup({
      -- 扩展插件配置
      pcall(telescope.load_extension, "env")
   },
+
 })
 
