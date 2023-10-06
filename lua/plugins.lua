@@ -80,7 +80,7 @@ packer.startup({
         use("puremourning/vimspector")
 
         -- dashboard-nvim
-        use {'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}}
+        -- use {'glepnir/dashboard-nvim', requires = {"kyazdani42/nvim-web-devicons"}}
 
         -- project manager
         -- use("ahmedkhalf/project.nvim")
