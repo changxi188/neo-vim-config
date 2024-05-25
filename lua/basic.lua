@@ -87,11 +87,6 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 
--- vimspector窗口调整
-vim.g.vimspector_enable_winbar = 0
-vim.g.vimspector_code_minwidth = 120
-vim.g.VimspectorTerminalOpened = "5"
-vim.g.vimspector_bottombar_height = 5
 
 -- telescope 窗口颜色配置
 vim.api.nvim_set_hl(0, 'NormalFloat', {})

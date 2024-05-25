@@ -202,13 +202,24 @@ pluginKeys.mapVimspector = function()
     map("n", "<leader>kk", ":call vimspector#Reset()<CR>", opt)
     -- 继续
     map("n", "<F5>", ":call vimspector#Continue()<CR>", opt)
-    -- 设置断点
-    map("n", "<F9>", ":call vimspector#ToggleBreakpoint()<CR>", opt)
-    map("n", "mmm", ":call vimspector#ClearBreakpoints()<CR>", opt)
     --  stepOver, stepOut, stepInto
     map("n", "<F6>", "<Plug>VimspectorStepOver", opt)
     map("n", "<F7>", "<Plug>VimspectorStepInto", opt)
     map("n", "<F8>", "<Plug>VimspectorStepOut", opt)
+    -- run to cursor
+    map("n", "<leader><F5>", "<Plug>VimspectorRunToCursor", opt)
+    -- jump to next break point
+    map("n", "<leader><F6>", "<Plug>VimspectorJumpToNextBreakpoint", opt)
+    -- Up/Down frame
+    map("n", "<leader><F7>", "<Plug>VimspectorUpFrame", opt)
+    map("n", "<leader><F8>", "<Plug>VimspectorDownFrame", opt)
+    -- 设置断点
+    map("n", "<F9>", ":call vimspector#ToggleBreakpoint()<CR>", opt)
+    map("n", "mmm", ":call vimspector#ClearBreakpoints()<CR>", opt)
+    -- 查看变量值
+    map("n", "<leader>i", "<Plug>VimspectorBalloonEval", opt)
+    map("n", "<leader>B", "<Plug>VimspectorBreakpoints", opt)
+    map("n", "<leader>d", "<Plug>VimspectorDisassemble", opt)
 end
 
 
